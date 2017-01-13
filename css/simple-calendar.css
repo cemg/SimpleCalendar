@@ -1,0 +1,72 @@
+* {
+    font-family: Arial;
+}
+
+body {
+    background-color: #333;
+}
+
+#calendar_div {
+    width: 960px;
+    height: auto;
+    padding: 20px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+table {
+    border-collapse: collapse;
+    width: 300px;
+    height: 300px;
+    float: left;
+    font-size: 18px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+table, td, th {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+}
+
+th {
+    background-color: black;
+    color: white;
+}
+
+.calendar-day.active {
+    background-color: #333;
+    color: #fff;
+}
+
+.calendar-day.past {
+    background-color: #777;
+    color: #fff;
+}
+
+.calendar-day.special_day {
+    background-color: #ffe0aa;
+}
+
+.clear {
+    clear: both;
+}
+
+.day_number, .remain_number {
+    font-size: 9px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #bbb;
+}
+
+.remain_number {
+    left: auto; right: 0;
+}
