@@ -8,5 +8,9 @@
 <body>
     <div id="calendar_div"></div>
     <script src=js/simple-calendar.js></script>
+    <script>
+        let thisYear = (new Date).getFullYear();
+        let build = new Calendar().getMonthsOfYear(thisYear, 1, 12);
+    </script>
 </body>
 </html>

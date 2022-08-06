@@ -24,19 +24,7 @@ function Calendar(month, year, day) {
     this.html = '';
 }
 
-Calendar.prototype.getMonthsOfYear = function (year, startMonth, endMonth) {
-    year = (isNaN(year) || year == null) ? this.year : year;
-    startMonth = (isNaN(startMonth) || startMonth == null) ? 1 : startMonth;
-    endMonth = (isNaN(endMonth) || endMonth == null) ? 12 : endMonth;
-    for (var m = startMonth; m <= endMonth; m++) {
-        var cal = new Calendar(m, year);
-        cal.generateHTML(1);
-        document.getElementById('calendar_div').innerHTML += cal.getHTML();
-    }
-}
-
 Calendar.prototype.generateHTML = function (shift) {
-
     shift = (shift || 0) % 7;
 
     // Get first day of month
@@ -109,4 +97,13 @@ Calendar.prototype.getHTML = function () {
     return this.html;
 }
 
-var build = new Calendar().getMonthsOfYear(2017, 1, 6);
+Calendar.prototype.getMonthsOfYear = function (year, startMonth, endMonth) {
+    year = (isNaN(year) || year == null) ? this.year : year;
+    startMonth = (isNaN(startMonth) || startMonth == null) ? 1 : startMonth;
+    endMonth = (isNaN(endMonth) || endMonth == null) ? 12 : endMonth;
+    for (var m = startMonth; m <= endMonth; m++) {
+        var cal = new Calendar(m, year);
+        cal.generateHTML(1);
+        document.getElementById('calendar_div').innerHTML += cal.getHTML();
+    }
+}
